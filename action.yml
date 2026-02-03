@@ -1,0 +1,16 @@
+name: "Send Github secrets to Secrets Manager"
+description: "Github Action to write Github Secrets into AWS Secrets Manager"
+author: "Kasper Pihl"
+branding:
+  icon: "lock"
+  color: "orange"
+
+inputs:
+  PREFIX:
+    description: "Prefix for organizing secrets (e.g., 'myapp'). Secrets will be stored as PREFIX/SECRET_NAME"
+    required: false
+    default: "appsecrets"
+
+runs:
+  using: "node22"
+  main: "index.js"
